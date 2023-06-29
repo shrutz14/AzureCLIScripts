@@ -1,0 +1,24 @@
+Following is the cloud init script to install the package of nginx we can make use of this config.txt file to create a 
+VM based on linux within our azure CLI
+"In Azure, cloud-init is a tool commonly used for customizing and configuring Linux-based virtual machines (VMs) during the provisioning process. While cloud-init is not a native Azure service, it is supported on Azure Linux VMs and can be used to perform various initialization tasks.
+
+When deploying a Linux VM in Azure, you can leverage cloud-init to automate tasks such as:
+
+Setting up the hostname and domain.
+Configuring network interfaces and IP addresses.
+Installing packages and software.
+Running custom scripts or commands.
+Creating and managing user accounts.
+Configuring SSH keys for remote access.
+Applying system configurations, including firewall rules, security settings, and file permissions.
+To use cloud-init on Azure Linux VMs, you typically provide a cloud-init user data file during the VM creation process. This file contains the configuration directives and scripts that cloud-init executes when the VM boots up for the first time. The user data file can be supplied in the Azure portal, through Azure Resource Manager (ARM) templates, or via the Azure command-line interface (CLI) or Azure PowerShell.
+
+Azure supports cloud-init on various Linux distributions, including Ubuntu, CentOS, Debian, and Red Hat Enterprise Linux (RHEL). When using cloud-init, it's important to ensure that the Linux distribution you choose has cloud-init installed by default or can be easily installed through package management.
+
+By utilizing cloud-init in Azure, you can automate the initial setup and configuration of Linux VMs, making it easier to manage and deploy consistent environments across your Azure infrastructure."
+make sure to comment line 1 to line 19 and then run the following script
+
+#cloud-config
+package_upgrade: true
+packages:
+    - nginx

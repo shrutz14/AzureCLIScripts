@@ -1,0 +1,12 @@
+#quickly creating VM
+
+az vm create -g "app-grp" -n "appvm" --image Win2019Datacenter --admin-username "appusr"
+
+#Specifying more values to create a vm
+
+#for getting list of all the images available and copy the imagestring u want to use int the create vm command 
+az vm image list --output table
+
+#for getting different vm sizes available
+az vm list-sizes --location "North Europe"
+az vm create -g "app-grp" -n "appvm" --image "MicrosoftWindowsServer:WindowsServer:2022-Datacenter:latest" --admin-username "appusr" --size "Standard_DS2_v2" --vnet-name "app-network" --subnet "SubnetA"

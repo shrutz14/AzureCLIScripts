@@ -1,0 +1,5 @@
+#quick create virtual machine scale set
+az vmss create -n "app-set" -g "app-grp" --admin-username "appusr" --image "MicrosoftWindowsServer:WindowsServer:2022-Datacenter:latest" --vm-sku "Standard_DS2_v2"
+
+#with this command some other resources might also be created with some default values as they are required for the scale set
+#all the other resources(that are not mentioned in the CLI command as it is a quick commant {short Hand}) that are required for the scale set to be in place will be created automatically with default values

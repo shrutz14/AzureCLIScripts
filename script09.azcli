@@ -1,0 +1,4 @@
+#Quick creation for azure VM but based on linux image
+#also how to attach cloud in a data
+
+az vm create -g "app-grp" -n "linuxvm" --image "INSERT SOME LINUX IMAGE" --admin-username "linuxuser" --admin-password "AzurePassword@123" --custom-data config.txt

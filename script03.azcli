@@ -1,0 +1,11 @@
+#Other commands of virtual network
+
+#to view list of virtual networks available
+az network vnet list
+
+#to get details of a particular network
+#Here -n denotes name and -g denotes resource group
+az network vnet show -n "app-network" -g "app-grp"
+
+#to add additional subnet to the vnet
+az network vnet subnet create -n "SubnetB" --address-prefixes 10.0.1.0/24 -g "app-grp" --vnet-name "app-network"

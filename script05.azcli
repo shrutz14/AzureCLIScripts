@@ -1,0 +1,4 @@
+#how to create a data disk and attach it to the vm
+az disk create -n "data-disk" -g "app-grp" -l "North Europe" --size-gb 16
+
+az vm disk attach --vm-name "appvm" --lun 0 -g "app-grp" -n "data-disk"

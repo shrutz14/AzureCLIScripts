@@ -1,0 +1,4 @@
+#creating azure web app
+az appservice plan create -n "demoplan4434" -g "app-grp" --sku F1
+
+az webapp create -n "webapp554434" -g "app-grp" --plan "demoplan4434"

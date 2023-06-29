@@ -1,0 +1,4 @@
+how to connect to azure through vs code
+az login in terminal 
+it will open authetication page in browser
+enter credentials and now u r logged in

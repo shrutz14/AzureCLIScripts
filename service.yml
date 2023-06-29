@@ -1,0 +1,17 @@
+#For deploying load balancer so that we can reach
+#that nginx service or pod running on the cluster from the internet
+#we'll deploy these yaml files in azure cli folder in azure cloud shell
+#by uploading these two files in cloud shell
+#there's another way by the use of CLI commands in local machine as well as in cloud shell
+#the another way is described in script10
+
+apiVersion: v1
+Kind: Service
+metadata:
+  name: app-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: myapp

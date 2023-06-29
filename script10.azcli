@@ -1,0 +1,26 @@
+#how to create an AKS cluster
+
+az aks create -g "app-grp" -n "appcluster" --node-count 1 --enable-addons monitoring --generate-ssh-keys
+
+#using Kubectl tools to deploy yaml files onto the cluster
+
+#if we want to use Kube Ctl tools in azure cli we first need to install the aks tools using the following command
+az aks install-cl
+
+#BUT IN azure cloud shell it is not required to install tools
+#following are the commands that can be used to deploy the yaml files
+az aks get-credentials -g "app-grp" -n "appcluster"
+#get credentials so that we can start working with kubernetes
+kubectl get nodes
+#to get the no of nodes in the cluster
+
+kubectl apply -f deployment.yml
+kubectl apply -f service.yml
+
+kubectl get service app-service "INSERT THE NAME OF THE APP SERVICE WE HAD GIVEN WHILE CREATING AKS"
+#AFTER running this command in the cloud shell you'll be provided externel IP along with many other details of the pod
+#when you will external IP address in browser you'll see the nginx server
+
+
+#to delete the AKS
+az aks delete -n "appcluster" -g "app-grp" --no-wait --yes
